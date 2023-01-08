@@ -1,0 +1,37 @@
+{% extends 'demo.html' %}
+
+{% block mymessage %}
+
+<table style="margin-left:300px;margin-top:0px">
+  {% for i in d %}
+  <tr>
+    <th>{{i.question}}</th></tr><tr>
+    <form action="./pollnswer" method="post">
+        {% csrf_token %}
+         <td><input  type="hidden" name="uid" value="{{i.id_poll}}"></td>
+      <td><input  type="hidden" name="q" value="{{i.question}}"></td>
+      <td><input type="submit" name="a" value=" {{i.option1}}"></td>
+     <br/><br/>
+    </form>
+        <form action="./pollnswer" method="post">
+            {% csrf_token %}
+            <td><input  type="hidden" name="uid" value="{{i.id_poll}}"></td>
+          <td><input  type="hidden" name="q" value="{{i.question}}"></td>
+      <td><input type="submit" name="a" value="{{i.option2}}"></td>
+    </form>
+    <form action="./pollnswer" method="post">
+        {% csrf_token %}
+        <td><input  type="hidden" name="uid" value="{{i.id_poll}}"></td>
+          <td><input  type="hidden" name="q" value="{{i.question}}"></td>
+      <td><input type="submit" name="a" value="{{i.option3}}"></td>
+    </form>
+        <form action="./pollnswer" method="post">
+            {% csrf_token %}
+            <td><input  type="hidden" name="uid" value="{{i.id_poll}}"></td>
+            <td><input  type="hidden" name="q" value="{{i.question}}"></td>
+      <td><input type="submit" name="a" value=" {{i.option4}}"></td>
+    </form>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'demo.html' %}
+
+{% block mymessage %}
+
+<body>
+<form action="./create" method="post">
+  {% csrf_token %}
+  <label>question</label>
+  <input type="text" name="q" placeholder="question"><br/>
+  <label>option1</label>
+  <input type="text" name="o1" placeholder="option1">
+  <label>option2</label>
+  <input type="text" name="o2" placeholder="option2">
+  <label>option3</label>
+  <input type="text" name="o3" placeholder="option3">
+  <label>option4</label>
+  <input type="text" name="o4" placeholder="option4">
+  <input type="submit" value="submit">
+
+</form>
+{% endblock %}

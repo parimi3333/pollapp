@@ -1,0 +1,10 @@
+{% extends 'demo.html' %}
+
+{% block mymessage %}
+
+<table style="margin-left:300px">
+{% for key, value in d.items %}
+<tr><th style="padding-right:10px">{{key}}</th><td>{{value}}</td></tr>
+{% endfor %}
+</table>
+{% endblock %}

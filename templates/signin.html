@@ -1,0 +1,20 @@
+{% extends 'demo.html' %}
+
+{% block mymessage %}
+{% for i in messages %}
+<h3>well come {{i}}</h3>
+
+{% endfor %}
+<div class="card" style="width: 38rem;margin-left:400px;margin-top:100px">
+  <h4 style="text-align:center">Poll app</h4>
+  <div class="card-body">
+<form action="./signindata" method="post">
+    {%csrf_token%}
+    <label>username</label>
+    <input type="text" name="username" placeholder="usrname"><br/>
+    <label>password</label>
+    <input type="text" name="password" placeholder="password"><br/>
+    <input type="submit" value="signin" style="margin-left:100px">
+</form>
+  </div></div>
+{% endblock %}
