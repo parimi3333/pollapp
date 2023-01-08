@@ -2,17 +2,18 @@
 
 {% block mymessage %}
 
-<table style="margin-left:300px">
+<div style="margin-left:400px">
+    <h4>click on button to see results</h4>
 {% for i in d %}
     <form action="./result" method="post">
         {%csrf_token%}
-        <tr><td><input type="hidden" name="uid" value="{{i.id_poll}}"></td></tr>
-        <tr><td><input type="hidden" name="o1" value="{{i.option1}}"></td></tr>
-        <tr><td><input type="hidden" name="o2" value="{{i.option2}}"></td></tr>
-        <tr><td><input type="hidden" name="o3" value="{{i.option3}}"></td></tr>
-        <tr><td><input type="hidden" name="o4" value="{{i.option4}}"></td></tr><br/>
-        <tr><td><input type="submit"  name="q" value="{{i.question}}"></td></tr>
+        <input type="hidden" name="uid" value="{{i.id_poll}}">
+        <input type="hidden" name="o1" value="{{i.option1}}">
+        <input type="hidden" name="o2" value="{{i.option2}}">
+        <input type="hidden" name="o3" value="{{i.option3}}">
+        <input type="hidden" name="o4" value="{{i.option4}}">
+        <input type="submit"  name="q" value="{{i.question}}" style="background-color:white;color:red;" size="100"><br/><br/>
     </form>
 {% endfor %}
-</table>
+</div>
 {% endblock %}
