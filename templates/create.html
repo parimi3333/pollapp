@@ -6,7 +6,7 @@
 <form action="./create" method="post">
   {% csrf_token %}
   <label>question</label>
-  <input type="text" name="q" placeholder="question"><br/>
+  <input type="text" name="q" placeholder="question" size="100"><br/><br/>
   <label>option1</label>
   <input type="text" name="o1" placeholder="option1">
   <label>option2</label>
@@ -14,8 +14,8 @@
   <label>option3</label>
   <input type="text" name="o3" placeholder="option3">
   <label>option4</label>
-  <input type="text" name="o4" placeholder="option4">
-  <input type="submit" value="submit">
+  <input type="text" name="o4" placeholder="option4"><br/><br/>
+  <input type="submit" value="submit" style="margin-left:400px">
 
 </form>
 {% endblock %}
